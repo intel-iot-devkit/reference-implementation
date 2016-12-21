@@ -1,0 +1,14 @@
+[Unit]
+Description=Transportation In-a-Box Demo
+After=multi-user.target
+After=imraa.target
+
+[Service]
+WorkingDirectory=/root/in-a-box
+Type=forking
+ExecStart=/bin/sh /root/in-a-box/start.sh
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy = multi-user.target
