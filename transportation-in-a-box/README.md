@@ -138,3 +138,11 @@ Then, in the arguments tab enter: ``` -webapp <path/to/www/folder> ```.
 ## Running without an IDE
 
 Download the repo directly to the target plaform and run the ``` start.sh ``` script.
+
+## Automatic startup
+
+To have the demo start automatically when the OS finishes loading use the included `in-a-box.service` file as follows:
+
+1. Copy the file to the `/lib/systemd/system` folder on the Dell* Wyse Gateway.
+2. Register the service by typing `systemctl enable in-a-box.service`.
+3. Reboot the gateway or start the service manually with `systemctl start in-a-box.service`.
