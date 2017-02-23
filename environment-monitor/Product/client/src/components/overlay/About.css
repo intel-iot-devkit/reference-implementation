@@ -1,0 +1,92 @@
+@import '../../vars.css';
+
+.about {
+  & .box {
+    width: 900px;
+    height: 588px;
+    margin-left: -450px;
+  }
+
+  &.thing {
+
+  }
+
+  & .back {
+    color: var(--dark-blue);
+    cursor: pointer;
+    padding: 10px 0;
+  }
+
+  & .diagram {
+    & p {
+      padding: 20px 0;
+      max-width: 800px;
+      line-height: 1.2rem;
+    }
+
+    & img {
+      height: 380px;
+      display: block;
+      width: 540px;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+
+  & .images {
+    width: 850px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  & .detail {
+    position: absolute;
+
+    & label {
+      display: block;
+      text-align: center;
+      width: 140px;
+      position: absolute;
+      left: 50%;
+      margin-left: -70px;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    & .popover {
+      position: absolute;
+      top: -250px;
+      left: -50px;
+    }
+
+    &.arduino {
+      left: 285px;
+      top: 0px;
+
+      & label {
+        margin-left: 0;
+        margin-top: -16px;
+      }
+    }
+
+    &.detail0 {
+      left: 77px;
+      top: 258px;
+    }
+
+    &.detail1 {
+      left: 308px;
+      top: 305px;
+    }
+
+    &.detail2 {
+      left: 513px;
+      top: 304px;
+    }
+
+    &.detail3 {
+      left: 646px;
+      top: 306px;
+    }
+  }
+}

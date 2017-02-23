@@ -1,0 +1,24 @@
+<div class="overlay setup">
+  <div class="bg" ng-click="$ctrl.close()"></div>
+  <div class="box">
+    <button class="close-button" ng-click="$ctrl.close()">×</button>
+    <div class="content">
+      <h2>Setup</h2>
+
+      <div class="settings">
+        <div class="row">
+          <setting sensor="$ctrl.sensors[0]" settings="$ctrl.settings[0]"></setting>
+          <setting sensor="$ctrl.sensors[1]" settings="$ctrl.settings[1]"></setting>
+        </div>
+        <div class="row">
+          <setting sensor="$ctrl.sensors[2]" settings="$ctrl.settings[2]"></setting>
+          <setting sensor="$ctrl.sensors[3]" settings="$ctrl.settings[3]"></setting>
+        </div>
+      </div>
+
+      <div class="restore" ng-click="$ctrl.restoreDefaults()" ng-show="$ctrl.showResets">
+        <span>Restore default settings</span>
+      </div>
+    </div>
+  </div>
+</div>

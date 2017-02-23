@@ -1,0 +1,47 @@
+<div class="setting">
+  <div class="setting-meter">
+    <label class="range max">{{$ctrl.sensor.max}}</label>
+    <label class="range min">{{$ctrl.sensor.min}}</label>
+    <div class="bg"><div class="track"></div></div>
+    <div class="meter-value" ng-hide="$ctrl.highError || $ctrl.lowError" style="top: {{$ctrl.meterTop}}%;">
+      <div class="handle top">
+        <div class="knob"></div>
+        <div class="bar"></div>
+        <label>{{$ctrl.high}}</label>
+      </div>
+      <div class="value-bar" style="height: {{$ctrl.valueHeight}}%;"></div>
+      <div class="handle bottom">
+        <div class="knob"></div>
+        <div class="bar"></div>
+        <label>{{$ctrl.low}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="info">
+    <p class="name">{{$ctrl.sensor.name}} <span class="unit">({{$ctrl.sensor.unit}})</span></p>
+    <!-- <p class="unit">({{$ctrl.sensor.unit}})</p> -->
+    <p class="desc">{{$ctrl.sensor.desc}}</p>
+    <div class="fields">
+      <div class="field">
+        <input 
+          type="text" 
+          ng-model="$ctrl.low" 
+          ng-class="{'error': $ctrl.lowError}" 
+          maxlength="{{String($ctrl.sensor.max).length}}" 
+          ng-keydown="$ctrl.validateKey($event)"  
+          ng-keyup="$ctrl.setMeter($event)" /> 
+      </div>
+      <p>to</p>
+      <div class="field">
+        <input 
+          type="text" 
+          ng-model="$ctrl.high" 
+          ng-class="{'error': $ctrl.highError}" 
+          maxlength="{{String($ctrl.sensor.max).length}}" 
+          ng-keydown="$ctrl.validateKey($event)" 
+          ng-keyup="$ctrl.setMeter($event)" /> 
+        <div class="unit"></div>
+      </div>
+    </div>
+  </div>
+</div>

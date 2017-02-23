@@ -1,0 +1,7 @@
+<div class="sensor" ng-class="{'alert-mode': $ctrl.alertMode}">
+  <div class="graphic">
+    <canvas sensor-canvas val="$ctrl.canvasValue" alerts="$ctrl.alerts"></canvas>
+  </div>
+  <div class="value" ng-class="$ctrl.sensorTextSize">{{$ctrl.value}}</div>
+  <div class="label">{{$ctrl.data.name}}</div>
+</div>

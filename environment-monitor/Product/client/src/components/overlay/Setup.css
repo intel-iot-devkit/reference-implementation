@@ -1,0 +1,29 @@
+@import '../../vars.css';
+
+.setup {
+  & .box {
+    width: 900;
+    height: 588px;
+    margin-left: -450px;
+  }
+
+  & .settings {
+    margin-top: 40px;
+    & .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 70px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  & .restore {
+    margin-top: 40px;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--light-gray);
+  }
+}

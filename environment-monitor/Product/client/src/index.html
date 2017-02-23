@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta charset="utf-8">
+    <title>Environment Monitor</title>
+  </head>
+  <body ng-app="airquality">
+    <div id="app" ng-controller="AirQualityCtrl">
+      
+
+      <!-- sidebar -->
+      <section class="sidebar">
+        <div class="bg"></div>
+        <ul class="menu">
+          <li>
+            <button>
+              <span class="menu-icon home"></span><span>Home</span>
+            </button>
+            <span class="menu-icon cloud" ng-show="online" ng-click="toggleOnline()" ng-class="{'off': forceOffline}"></span>
+          </li>
+          <li><button ng-click="openModal('about')"><span class="menu-icon about"></span><span>About</span></button></li>
+          <li><button ng-click="openModal('setup')"><span class="menu-icon setup"></span><span>Set Up</span></button></li>
+          <li><button ng-click="openModal('log')"><span class="menu-icon log"></span><span>Log</span></button></li>
+        </ul>
+        <div class="notices">
+          <notice ng-repeat="notice in notices" data="notice"></notice>
+        </div>
+      </section>
+
+
+      <!-- sensors -->
+      <section class="sensors">
+        <div class="sensor-holder" ng-repeat="sensor in sensors">
+          <sensor data="sensor" value="sensorValues[sensor.id]" alerts="alerts[$index].alerts" />
+        </div>
+      </section>
+
+
+      <!-- overlays -->
+      <section class="overlays">
+        <about ng-show="overlay === 'about'" close="closeModal"></about>
+        <setup ng-show="overlay === 'setup'" close="closeModal" sensors="sensors"></setup>
+        <log ng-show="overlay === 'log'" close="closeModal" alerts="alerts"></log>
+      </section>
+
+      <!-- error -->
+      <div class="no-aws" ng-show="noAws" ng-click="toggleOnline()">
+        <p>{{awsUnavailable}}</p>
+      </div>
+
+    </div>
+  </body>
+</html>

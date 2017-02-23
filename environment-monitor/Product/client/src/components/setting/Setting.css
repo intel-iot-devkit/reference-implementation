@@ -1,0 +1,139 @@
+@import  '../../vars.css';
+
+.setting {
+  & .range {
+    position: absolute;
+    color: var(--light-gray);
+
+    &.max {
+      left: 50px;
+      top: 0;
+    }
+    &.min {
+      left: 50px;
+      top: 162px;
+    }
+  }
+
+  & .setting-meter {
+    position: relative;
+    float: left;
+    width: 66px;
+    margin-right: 40px;
+    height: 155px;
+
+    & .bg {
+      width: 20px;
+      height: 175px;
+      border-radius: 10px;
+      background: #bbbbbb;
+      position: absolute;
+      top: 0px;
+      left: 18px;
+
+      & .track {
+        position: absolute;
+        top: 10px;
+        height: 155px;
+        width: 20px;
+        background: var(--bright-gray);
+      }
+    }
+
+    & .meter-value {
+      position: relative;
+      width: 100%;
+      margin-top: 7px;
+
+      & .handle {
+        position: relative;
+        z-index: 10;
+
+        &.bottom {
+          top: -3px;
+        }
+
+        & label {
+          position: absolute;
+          top: -3px;
+          left: 50px;
+        }
+
+        & .knob {
+          position: absolute;
+          background: var(--dark-blue);
+          width: 8px;
+          height: 8px;
+          border-radius: 4px;
+        }
+        & .bar {
+          position: absolute;
+          background: var(--dark-blue);
+          height: 3px;
+          width: 34px;
+          top: 3px;
+          left: 4px;
+        }
+      }
+
+      & .value-bar {
+        background: var(--blue);
+        width: 20px;
+        right: 0px;
+        height: 50px;
+        position: relative;
+        left: 18px;
+        top: 3px;
+      }
+    }
+  }
+
+  & .info {
+    width: 260px;
+    float: left;
+
+    & .name {
+      color: var(--dark-blue);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    & .unit {
+      color: #999;
+      font-size: 14px;
+      position: relative;
+      top: -1px;
+    }
+    & .desc {
+      color: var(--gray);
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    & .fields {
+      display: flex;
+      justify-content: space-between;
+      width: 230px;
+
+      & input {
+        border: 2px solid var(--dark-blue);
+        padding: 8px 12px;
+        border-radius: 4px;
+        width: 76px;
+        display: block;
+        background: var(--bright-gray);
+        font-color: var(--dark-blue);
+        font-size: 16px;
+
+        &.error {
+          border: 2px solid var(--red);
+          color: var(--red);
+        }
+      }
+
+      & p {
+        margin-top: 10px;
+      }
+    }
+  }
+}

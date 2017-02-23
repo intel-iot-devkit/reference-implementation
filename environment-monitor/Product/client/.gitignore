@@ -1,0 +1,6 @@
+*.tgz
+dist-react/
+dist-angular/
+node_modules/
+npm-debug.log
+.DS_Store

@@ -1,0 +1,113 @@
+@import  '../../vars.css';
+
+.log {
+  color: var(--dark-blue);
+
+  & .box {
+    width: 70%;
+    height: 588px;
+    margin-left: -35%;
+  }
+
+  & .log-row, & .log-key {
+    border-bottom: 1px solid var(--light-gray);
+    height: 90px;
+    display: flex;
+
+    & .lab {
+      margin-top: 37px;
+      margin-right: 20px;
+      flex-basis: 14%;
+    }
+
+    & .bar {
+      height: 22px;
+      background: var(--light-gray);
+      border-radius: 11px;
+      margin-top: 34px;
+      flex-basis: 86%;
+      position: relative;
+    }
+
+    & .event {
+      background: var(--red);
+      height: 12px;
+      width: 12px;
+      display: inline-block;
+      border-radius: 6px;
+      position: absolute;
+      top: 5px;
+    }
+  }
+
+  & .log-timeline {
+    border-bottom: 1px solid var(--light-gray);
+    height: 90px;
+    display: flex;
+
+    & .lab {
+      color: var(--blue);
+      margin-top: 37px;
+      margin-right: 20px;
+      flex-basis: 14%;
+    }
+    & .bar {
+      flex-basis: 86%;
+      margin-top: 34px;
+    }
+    & .time-bar {
+      height: 22px;
+      background: var(--blue);
+      border-radius: 11px;
+      margin-bottom: 8px;
+    }
+
+    & .times {
+      display: flex;
+      justify-content: space-between;
+      & .time {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+    }
+  }
+
+  & .log-key {
+    border-bottom: 0;
+
+    & .bar {
+      display: flex;
+      background: transparent;
+      margin-top: 26px;
+      flex-basis: 66%;
+    }
+
+    & .dot {
+      height: 12px;
+      display: inline-block;
+      border-radius: 6px;
+    }
+
+    & .key-alert {
+      margin-right: 40px;
+      & .dot {
+        width: 12px;
+        background: var(--red);
+      }
+    }
+    & .key-timeline {
+      & .dot {
+        width: 80px;
+        background: var(--blue);
+      }
+    }
+  }
+
+  & .clear-log {
+    cursor: pointer;
+    color: var(--light-gray);
+    flex-basis: 20%;
+    margin-top: 26px;
+    text-align: right;
+  }
+}

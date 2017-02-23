@@ -1,0 +1,46 @@
+<div class="overlay log">
+  <div class="bg" ng-click="$ctrl.close()"></div>
+  <div class="box">
+    <button class="close-button" ng-click="$ctrl.close()">×</button>
+    <div class="content">
+      <h2>Log</h2>
+      <div class="log-container">
+        <!-- rows -->
+        <div class="log-row" ng-repeat="sensor in $ctrl.alerts">
+          <div class="lab"><label>{{sensor.name}}</label></div>
+          <div class="bar">
+            <div class="event" ng-repeat="a in sensor.alerts" style="left:{{a.percentOfDay | number:2}}%;"></div>
+          </div>
+        </div>
+
+        <!-- timeline -->
+        <div class="log-timeline">
+          <div class="lab"><label>{{$ctrl.getDate()}}</label></div>
+          <div class="bar">
+            <div class="time-bar"></div>
+            <div class="times">
+              <span class="time" ng-repeat="time in $ctrl.times track by $index">{{time}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- key -->
+        <div class="log-key">
+          <div class="lab"></div>
+          <div class="bar">
+            <div class="key-alert">
+              <span class="dot"></span> <label>Threshold Alert</label>
+            </div>
+            <div class="key-timeline">
+              <span class="dot"></span> <label>Timeline</label>
+            </div>
+          </div>
+          <div class="clear-log" ng-click="$ctrl.clearLog()" ng-show="$ctrl.showResets">
+            <span>Clear log</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

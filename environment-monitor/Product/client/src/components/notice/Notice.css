@@ -1,0 +1,61 @@
+@import '../../vars.css';
+
+.notice {
+  background: white;
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
+  transition: opacity 0.8s;
+  opacity: 0;
+
+  & >div {
+    box-sizing: border-box;
+  }
+
+  & img {
+    float: right;
+  }
+
+  & p {
+    color: var(--dark-blue);
+  }
+
+  & .body {
+    padding: 10px;
+    overflow: auto;
+
+    & p {
+      float: left;
+      width: 60%;
+      font-size: 14px;
+    }
+  }
+
+  & .header {
+    height: 36px;
+    background: var(--red);
+    padding: 10px;
+
+    & p {
+      color: white;
+    }
+  }
+
+  & .date {
+    font-size: 14px;
+  }
+
+  & .footer {
+    min-height: 36px;
+    background: var(--light-gray);
+    padding: 10px;
+  }
+
+  &.fade-in {
+    opacity: 1;
+  }
+
+  &.fade-out {
+    opacity: 0;
+  }
+}

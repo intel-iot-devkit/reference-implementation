@@ -1,0 +1,30 @@
+
+@font-face {
+  font-family: "IntelClear_BdIt";
+  src: url("./assets/fonts/IntelClear_BdIt.ttf") format("truetype");   
+}
+
+@font-face {
+  font-family: "IntelClear_It";
+  src: url("./assets/fonts/IntelClear_It.ttf") format("truetype");   
+}
+
+@font-face {
+  font-family: "IntelClear_Lt";
+  src: url("./assets/fonts/IntelClear_Lt.ttf") format("truetype");   
+}
+
+@font-face {
+  font-family: "IntelClear_LtIt";
+  src: url("./assets/fonts/IntelClear_LtIt.ttf") format("truetype");   
+}
+
+@font-face {
+  font-family: "IntelClear_Bd";
+  src: url("./assets/fonts/IntelClear_Bd.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IntelClear_Rg";
+  src: url("./assets/fonts/IntelClear_Rg.ttf") format("truetype");   
+}

@@ -1,0 +1,73 @@
+@import '../../vars.css';
+
+.sensor {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  
+  & .graphic {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    & canvas {
+      height: 170px;
+      width: 170px;
+    }
+  }
+
+  & .value {
+    color: var(--blue);
+    font-size: 4rem;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-58%);
+    width: 162px;
+  }
+
+  & .small {
+    font-size: 3rem;
+  }
+
+  & .smallest {
+    font-size: 2.3rem;
+  }
+
+  & .label {
+    color: var(--dark-blue);
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    width: 170px;
+    bottom: -16px;
+    font-size: 20px;
+  }
+
+  &.alert-mode {
+    & .value {
+      color: var(--red);
+    }
+  }
+}
+
+@media (min-width: 1180px) {
+  .sensor {
+    & .graphic {
+      & canvas {
+        height: 210px;
+        width: 210px;
+      }
+    }
+
+    & .value {
+      width: 200px;
+    }
+
+    & .label {
+      width: 200px;
+    }
+  }
+}
