@@ -1,5 +1,3 @@
 # IoT Reference Implementation: How to Build an Environment Monitor Solution
 
-This how-to guide is part of an IoT (Internet of Things) series that investigates how novel solutions can be created with lower investments in both cost and
-time than would otherwise be possible by drawing on pre-existing IoT projects. The Environment Monitor solution is an adaptation of an IoT project developed
-by an Intel team - an Air Quality Sensor implementation.
+This guide demonstrates how existing IoT solutions can be adapted to address more complex problems (e.g., solutions that require more sensor monitoring). The solution we present here, an Environment Monitor, incorporates additional hardware and extends the use of IoT software libraries (sensors and I/O). Also, the solution has been adapted so the gateway can work with multiple operating systems.
