@@ -1,0 +1,8 @@
+com.intel.core.connection.selection=nuc
+com.intel.core.platform.selected.id=com.intel.iotdevkit.platform.gateway_x86_64
+com.intel.core.project.description=Gateway 64-Bit
+com.intel.core.project.name=EnvMonitor
+com.intel.core.project.type.id=com.intel.iotdevkit.cdt.iotCDTNature
+com.intel.core.project.version=4.0.0
+eclipse.preferences.version=1
+platform/os=wrs_64

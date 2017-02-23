@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.intel.iotdevkit.wrs.x64.toolchain.724356313">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.intel.iotdevkit.wrs.x64.toolchain.724356313" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="com.intel.iotdevkit.wrs.x64.toolchain.724356313" name="Debug" parent="com.intel.iotdevkit.wrs.x64.config.gnu.cross.exe.debug">
+					<folderInfo id="com.intel.iotdevkit.wrs.x64.toolchain.724356313." name="/" resourcePath="">
+						<toolChain id="com.intel.iotdevkit.wrs.x64.toolchain.gnu.cross.exe.debug.2059979901" name="IoT WRS 64-bit GCC" superClass="com.intel.iotdevkit.wrs.x64.toolchain">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.407382219" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/Air_Quality_Sensor}/Debug" id="com.intel.iotdevkit.wrs.x64.builder.78262435" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="IoT Gateway 64-bit internal builder" superClass="com.intel.iotdevkit.wrs.x64.builder"/>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.compiler.1014561356" name="IoT WRS 64-bit GCC Compiler" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.161616190" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1122919691" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.635897596" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.compiler.351673263" name="IoT WRS 64-bit G++ Compiler" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1944373294" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1528420564" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.misc.other.1447831287" superClass="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.misc.other" useByScannerDiscovery="false" value="-std=c++1y --sysroot=&quot;${DOCKER_SYSROOT}&quot; -m64  -march=corei7 -c  -ffunction-sections  -fdata-sections" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.1257140484" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++1y" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.899029043" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2005993065" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.linker.2070113530" name="IoT WRS 64-bit GCC Linker" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.linker"/>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.linker.1805019567" name="IoT WRS 64-bit G++ Linker" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.linker">
+								<option id="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.link.libs.486656978" name="Libraries" superClass="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.link.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="mraa"/>
+									<listOptionValue builtIn="false" value="upm-led"/>
+									<listOptionValue builtIn="false" value="paho-mqtt3cs"/>
+									<listOptionValue builtIn="false" value="upm-gas"/>
+									<listOptionValue builtIn="false" value="upm-grove"/>
+									<listOptionValue builtIn="false" value="boost_system"/>
+									<listOptionValue builtIn="false" value="boost_thread"/>
+									<listOptionValue builtIn="false" value="boost_filesystem"/>
+									<listOptionValue builtIn="false" value="boost_date_time"/>
+									<listOptionValue builtIn="false" value="pthread"/>
+									<listOptionValue builtIn="false" value="curl"/>
+									<listOptionValue builtIn="false" value="upm-bmp280"/>
+									<listOptionValue builtIn="false" value="upm-ppd42ns"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2060384188" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.archiver.898700158" name="IoT WRS 64-bit GCC Archiver" superClass="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.archiver"/>
+							<tool id="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.assembler.329593250" name="IoT WRS 64-bit GCC Assembler" superClass="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.734386025" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.intel.iotdevkit.wrs.x64.toolchain.659915624">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.intel.iotdevkit.wrs.x64.toolchain.659915624" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="com.intel.iotdevkit.wrs.x64.toolchain.659915624" name="Release" parent="com.intel.iotdevkit.wrs.x64.config.cross.exe.release">
+					<folderInfo id="com.intel.iotdevkit.wrs.x64.toolchain.659915624." name="/" resourcePath="">
+						<toolChain id="com.intel.iotdevkit.wrs.x64.toolchain.gnu.cross.exe.release.1764829980" name="IoT WRS 64-bit GCC" superClass="com.intel.iotdevkit.wrs.x64.toolchain">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1442698298" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/Air_Quality_Sensor}/Release" id="com.intel.iotdevkit.wrs.x64.builder.2003172049" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="IoT Gateway 64-bit internal builder" superClass="com.intel.iotdevkit.wrs.x64.builder"/>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.compiler.1712136683" name="IoT WRS 64-bit GCC Compiler" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.1275459379" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.799378212" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.400101763" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.compiler.403972271" name="IoT WRS 64-bit G++ Compiler" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.311622669" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.760076026" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.misc.other.1801149008" superClass="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.misc.other" useByScannerDiscovery="false" value="-std=c++1y --sysroot=&quot;${DOCKER_SYSROOT}&quot; -m64  -march=corei7 -c  -ffunction-sections  -fdata-sections" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.247678444" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++1y" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1239932501" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.linker.1424372185" name="IoT WRS 64-bit GCC Linker" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.linker"/>
+							<tool id="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.linker.2106746942" name="IoT WRS 64-bit G++ Linker" superClass="com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.linker">
+								<option id="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.link.libs.1400096142" name="Libraries" superClass="com.intel.iotdevkit.wrs.x64.gnu.cpp.option.link.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="mraa"/>
+									<listOptionValue builtIn="false" value="upm-grovespeaker"/>
+									<listOptionValue builtIn="false" value="paho-mqtt3cs"/>
+									<listOptionValue builtIn="false" value="upm-gas"/>
+									<listOptionValue builtIn="false" value="upm-grove"/>
+									<listOptionValue builtIn="false" value="boost_system"/>
+									<listOptionValue builtIn="false" value="boost_thread"/>
+									<listOptionValue builtIn="false" value="boost_filesystem"/>
+									<listOptionValue builtIn="false" value="boost_date_time"/>
+									<listOptionValue builtIn="false" value="pthread"/>
+									<listOptionValue builtIn="false" value="curl"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2040490615" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.archiver.1433473239" name="IoT WRS 64-bit GCC Archiver" superClass="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.archiver"/>
+							<tool id="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.assembler.1818859321" name="IoT WRS 64-bit GCC Assembler" superClass="com.intel.iotdevkit.wrs.x64.gnu.generic.tool.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1120851740" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Air_Quality_Sensor.null.249068898" name="Air_Quality_Sensor"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.intel.iotdevkit.wrs.x64.toolchain.659915624;com.intel.iotdevkit.wrs.x64.toolchain.659915624.;com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.compiler.403972271;cdt.managedbuild.tool.gnu.cpp.compiler.input.1239932501">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.intel.iotdevkit.wrs.x64.toolchain.724356313;com.intel.iotdevkit.wrs.x64.toolchain.724356313.;com.intel.iotdevkit.wrs.x64.tool.gnu.cross.cpp.compiler.351673263;cdt.managedbuild.tool.gnu.cpp.compiler.input.2005993065">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.intel.iotdevkit.wrs.x64.toolchain.724356313;com.intel.iotdevkit.wrs.x64.toolchain.724356313.;com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.compiler.1014561356;cdt.managedbuild.tool.gnu.c.compiler.input.635897596">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.intel.iotdevkit.wrs.x64.toolchain.659915624;com.intel.iotdevkit.wrs.x64.toolchain.659915624.;com.intel.iotdevkit.wrs.x64.tool.gnu.cross.c.compiler.1712136683;cdt.managedbuild.tool.gnu.c.compiler.input.400101763">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
+</cproject>

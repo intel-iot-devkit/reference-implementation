@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/DOCKER_IMAGE/delimiter=\:
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/DOCKER_IMAGE/operation=replace
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/DOCKER_IMAGE/value=intel-iot-wrs-64
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/DOCKER_SYSROOT/delimiter=\:
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/DOCKER_SYSROOT/operation=replace
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/DOCKER_SYSROOT/value=
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/append=true
+environment/project/com.intel.iotdevkit.wrs.x64.toolchain.724356313/appendContributed=true

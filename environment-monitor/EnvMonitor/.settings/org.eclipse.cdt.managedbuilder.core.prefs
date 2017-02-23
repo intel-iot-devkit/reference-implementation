@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/CPATH/delimiter=\:
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/CPATH/operation=remove
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/CPLUS_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/C_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/append=true
+environment/buildEnvironmentInclude/com.intel.iotdevkit.wrs.x64.toolchain.724356313/appendContributed=true
+environment/buildEnvironmentLibrary/com.intel.iotdevkit.wrs.x64.toolchain.724356313/LIBRARY_PATH/delimiter=\:
+environment/buildEnvironmentLibrary/com.intel.iotdevkit.wrs.x64.toolchain.724356313/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/com.intel.iotdevkit.wrs.x64.toolchain.724356313/append=true
+environment/buildEnvironmentLibrary/com.intel.iotdevkit.wrs.x64.toolchain.724356313/appendContributed=true

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="com.intel.iotdevkit.wrs.x64.toolchain.724356313" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="com.intel.iotdevkit.toolchain.BuiltinSpecsDetector" console="false" env-hash="1663548263514567512" id="com.intel.iotdevkit.toolchain.BuiltinSpecsDetector" keep-relative-paths="false" name="IoT Builtin Specs Detector" parameter="docker exec -i ${DOCKER_IMAGE} /bin/bash -c &quot;${COMMAND} ${FLAGS} -E -P -v -dD -dI &quot;${INPUTS}&quot; --sysroot=&quot;${DOCKER_SYSROOT}&quot; &quot;" prefer-non-shared="true">
+				<language-scope id="org.eclipse.cdt.core.g++"/>
+				<language-scope id="org.eclipse.cdt.core.gcc"/>
+			</provider>
+		</extension>
+	</configuration>
+	<configuration id="com.intel.iotdevkit.wrs.x64.toolchain.659915624" name="Release">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="com.intel.iotdevkit.toolchain.BuiltinSpecsDetector" console="false" env-hash="1675687366494304688" id="com.intel.iotdevkit.toolchain.BuiltinSpecsDetector" keep-relative-paths="false" name="IoT Builtin Specs Detector" parameter="docker exec -i ${DOCKER_IMAGE} /bin/bash -c &quot;${COMMAND} ${FLAGS} -E -P -v -dD -dI &quot;${INPUTS}&quot; --sysroot=&quot;${DOCKER_SYSROOT}&quot; &quot;" prefer-non-shared="true">
+				<language-scope id="org.eclipse.cdt.core.g++"/>
+				<language-scope id="org.eclipse.cdt.core.gcc"/>
+			</provider>
+		</extension>
+	</configuration>
+</project>
