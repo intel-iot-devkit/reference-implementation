@@ -1,14 +1,14 @@
 # IoT Reference Implementation: How to Build an Environment Monitor Solution
 
-This how-to guide is part of an IoT (Internet of Things) series that investigates how novel solutions can be created with lower investments in both cost and
-time than would otherwise be possible by drawing on pre-existing IoT projects. The Environment Monitor solution is an adaptation of an IoT project developed
-by an Intel team - an Air Quality Sensor implementation.
+This guide demonstrates how existing IoT solutions can be adapted to address more complex problems (e.g., solutions that require more sensor monitoring).
+The solution we present here, an Environment Monitor, incorporates additional hardware and extends the use of IoT software libraries (sensors and I/O).
+Also, the solution has been adapted so the gateway can work with multiple operating systems.
 
 The Environment Monitor solution described in this how-to guide, shown in Figure 1, is built using an
 [Intel® NUC Kit DE3815TYKHE](http://www.intel.com/content/www/us/en/nuc/nuc-kit-de3815tykhe-board-de3815tybe.html),
 an Arduino 101\* (branded Genuino 101\* outside the U.S.) board, and Grove\* sensors available from Seeed Studio\*. The solution
-runs on Ubuntu\* Server, with development using [Intel® System Studio IoT Edition](https://software.intel.com/en-us/iot/tools-ide/ide/iss-iot-edition),
-a plug-in for the Eclipse\* IDE that facilitates connecting to the Intel® NUC and developing applications.
+runs on Ubuntu\* Server with the [Intel® System Studio IoT Edition](https://software.intel.com/en-us/iot/tools-ide/ide/iss-iot-edition),
+which creates the code to enable the sensors.
 
 ![Figure 1](./images/figure1.png)
 
@@ -24,16 +24,19 @@ to interface with platform I/O and sensor data. In this case, the MRAA library p
 the Arduino 101\* board using Firmata\*. The UPM sensor library was developed on top of MRAA and exposes a user-friendly API that will allow the user to capture
 sensor data with just a few lines of code. Data is then sent periodically to Amazon Web Services (AWS)\* using MQTT\*.
 
-The exercise in this document describes how to recreate the Environment Monitor solution. It does not require special equipment or deep expertise, and it is
-meant to demonstrate how existing IoT solutions can be adapted to the requirements of a specific project team.
+The exercise in this document describes how to build the Environment Monitor solution.
 
-From this exercise, developers will learn to do the following:
- * **Setup the system hardware** including the Intel® NUC Kit DE3815TYKHE, the Arduino 101\* board and sensors.
- * **Install and configure the required software** including the Ubuntu\* Server OS and connecting to the internet, MRAA and UPM libraries, as well as cloning
- of the project software repository.
- * **Create the development and runtime environment,** including installation of [Intel® System Studio IoT Edition](https://software.intel.com/en-us/iot/tools-ide/ide/iss-iot-edition),
- creating a project, populating it with the files needed to build the solution, and running it.
- * **Setup and connect to the cloud data store** using MQTT\* and Amazon Web Services (AWS)\*, which provides data storage for the solution.
+From this exercise, developers will learn how to:
+ * **Setup the system hardware**
+        * Intel® NUC Kit DE3815TYKHE
+        * Arduino 101\* board
+        * Sensors
+ * **Install and configure the required software**
+        * Ubuntu\* Server
+        * IoT Software Libraries ([MRAA](http://mraa.io) and [UPM](http://upm.mraa.io)
+        * [Intel® System Studio IoT Edision](https://software.intel.com/en-us/iot/tools-ide/ide/iss-iot-edition) (IDE)
+ * **Connect to Cloud Services**
+        * Amazon Web Services (AWS)\* using MQTT\*
 
 ## Setup the System Hardware
 
@@ -50,14 +53,14 @@ and Grove\* sensors.
 
 *Figure 3. Back of the Intel® NUC*
 
-Setting up the Intel® NUC for this solution consists of the following steps: 
+Setting up the Intel® NUC for this solution consists of the following steps:
  1. Follow the Intel® NUC DE3815TYKHE User Guide (available online here) and determine if additional components, such as system memory, need to be installed.
  Optionally, an internal drive and/or wireless card can be added.
  2. Connect a monitor via the HDMI or VGA port and a USB keyboard. These are required for OS deployment and can be removed after the Intel® NUC has been
  connected to the network and a connection from the development environment has been established.
  3. Plug in an Ethernet cable from your network’s router. This step can be omitted if a wireless network card has been installed instead.
- 4. Plug in the power supply. 
- 5. Do not turn on the Intel® NUC yet. Wait to turn on until the Arduino 101\* and other hardware components are in place. 
+ 4. Plug in the power supply for the Intel® NUC but **DO NOT** press the power button yet. First connect the Arduino 101 and other hardware components and then
+ power on the Intel® NUC.
 
 **Note:** The Intel® NUC provides a limited amount of internal eMMC storage (4 GB). Consider using an internal drive or a USB thumb drive to extend the storage capacity.
 
@@ -115,7 +118,7 @@ and finally cloning the project sources from a GitHub\* repository.
 ### Installing the OS: Ubuntu Server
 
  * Installation instructions for Ubuntu on the Intel® NUC are available here: https://www.ubuntu.com/download/server/install-ubuntu-server.
- 
+
    Use the ISO file from the above link.
 
  * Instead of creating a bootable CD-ROM (as per the above link), create a bootable USB stick. The instructions to download the tool and create the bootable
@@ -139,25 +142,25 @@ The following steps list commands that have to be entered into a terminal (shell
 
 #### Ethernet
 
- 1.	Once Ubuntu is installed, restart the Intel® NUC and login using your user.
- 2.	Type in the command `ifconfig` and find the interface named `enp3s0` in the list. In some cases, this might show up as `eth0` instead.
+ 1. Once Ubuntu is installed, restart the Intel® NUC and login using your user.
+ 2. Type in the command `ifconfig` and find the interface named `enp3s0` in the list. In some cases, this might show up as `eth0` instead.
  Use the name displayed here for the following step.
- 3.	Open the network interface file using the command: `vim /etc/network/interfaces` and the following lines to it:
+ 3. Open the network interface file using the command: `vim /etc/network/interfaces` and the following lines to it:
 
     ```
     auto enp3s0
     iface enp3s0 inet dhcp
     ```
 
- 4.	Save and exit the file and restart the network service using the following command: `/etc/init.d/networking restart`.
- 5.	If you are connecting to external networks via a proxy, you will have to set it up as well.
+ 4. Save and exit the file and restart the network service using the following command: `/etc/init.d/networking restart`.
+ 5. If you are connecting to external networks via a proxy, you will have to set it up as well.
 
 #### Wi-Fi (optional)
 
 This is an optional step that only applies if a wireless card has been added to the Intel® NUC.
 
- 1.	Install Network Manager using the command: `sudo apt install network-manager` and then install WPA supplicant using: `sudo apt install wpasupplicant`
- 2.	Once these are in place, check your WiFi\* interface name using `ifconfig`. This examples uses `wlp2s0`. Now run the following commands:
+ 1. Install Network Manager using the command: `sudo apt install network-manager` and then install WPA supplicant using: `sudo apt install wpasupplicant`
+ 2. Once these are in place, check your WiFi\* interface name using `ifconfig`. This examples uses `wlp2s0`. Now run the following commands:
     * Add the wifi interface to the interfaces file at: `/etc/network/interfaces` by adding the following lines:
 
         ```
@@ -180,7 +183,7 @@ This is an optional step that only applies if a wireless card has been added to 
 
     * Now, running `nmcli c` should show you the connection you have tried to connect to. In case you are trying to connect to an enterprise network, you might
     have to make changes to `/etc/NetworkManager/system-connections/[network-name]`
-  	* Now bring up the connection and the network interfaces:
+    * Now bring up the connection and the network interfaces:
 
         ```
         nmcli con up [network-name]
@@ -220,7 +223,7 @@ git clone https://github.com/intel-iot-devkit/reference-implementation.git
 ```
 
 Alternatively, you can download the repository as a .zip file. To do so, from your web browser (make sure you are signed in to your GitHub account) go to and
-click the Clone or download button on the far right (green button in figure 6 below). Once the .zip file is downloaded, unzip it, and then use the files in the
+click the **Clone or download** button on the far right (green button in figure 6 below). Once the .zip file is downloaded, unzip it, and then use the files in the
 directory for this example.
 
 ![Figure 6](./images/figure6.png)
@@ -273,7 +276,7 @@ file and select **Open with**. Select the **Terminal** app. In the dialog box th
 
  1. Navigate to the directory you extracted the contents of the installer file to.
  2. Launch Intel® System Studio IoT Edition:
-    * On Windows®, double-click **iss-iot-launcher.bat** to launch Intel® System Studio IoT Edition. 
+    * On Windows®, double-click **iss-iot-launcher.bat** to launch Intel® System Studio IoT Edition.
     * On Linux\*, run export SWT_GTK3=0 and then ./iss-iot-launcher.sh.
     * On Mac OS X\*, run iss-iot-launcher.
 
@@ -290,48 +293,47 @@ build and run.
  of the Intel® NUC (run command: `ifconfig` on the Intel® NUC if you’re unsure).
 
     ![Figure 7](./images/figure7.png)
-    
+
     *Figure 7. New Intel® IoT Project.*
 
     ![Figure 8](./images/figure8.png)
-    
+
     *Figure 8. Adding Target Connection.*
 
  3. Now give the project the name “Environment Monitor” and in the examples choose the “Air Quality Sensor” as the How-To Code Sample (shown in Figure 9) and
  then click **Next**.
 
     ![Figure 9](./images/figure9.png)
-    
+
     *Figure 9. Adding Project Name.*
 
  4. The preceding steps will have created a How to Code Sample project. Now we have to do a couple of small things in order to convert this into Environment
  Monitor Project:
     a. Copy over the **air-quality-sensor.cpp** and **grovekit.hpp** file from the git repository's **src** folder into the new project's **src** folder in
-    Intel® System Studio IoT Edition. This will overwrite the local files. 
-    b. Next right click on the project name and follow the sequence: **Right Click->C/C++ Build->Settings->IoT WRS 64-Bit G++ Linker->Libraries** and then add
-    the libraries as shown in the following screen shot. This can be done by clicking on the small green plus icon on the top right side of the libraries view.
-    The red X next to it deletes the libraries.
+    Intel® System Studio IoT Edition. This will overwrite the local files.
+    b. Next right click on the project name and follow the sequence: **Right Click → C/C++ Build → Settings → IoT WRS 64-Bit G++ Linker → Libraries** and then
+    add the libraries as shown in the following screen shot. This can be done by clicking on the small green '+' icon on the top right side of the libraries
+    view. The red 'x' next to green '+' icon deletes the libraries.
 
     ![Figure 10](./images/figure10.png)
-    
+
     *Figure 10. Adding libraries to the build path.*
 
- 5. In order to run this project, connect to the Intel® NUC first using the IP address already provided. This can be done from the Connection view, but right
- clicking on the target and choosing the “Connect” option. Enter username/password for the Intel® NUC when prompted. Be careful, the Intel® NUC and the laptop
- running ISS should be on the same network.
+ 5. In order to run this project, connect to the Intel® NUC first using the IP address already provided. This can be done from the **Target Selection View**,
+ but you can also right click on the target and choose the “Connect” option. Enter username/password for the Intel® NUC when prompted.
+
+**Note:** Ensure the Intel® NUC and the laptop (running Intel® System Studio IoT Edition) are connected to the same network.
 
 ## Setup and Connect to the Cloud Data Store
 
 ### Amazon\* AWS
 
-This solution was designed to send sensor data using the MQTT\* protocol to Amazon\* AWS. In order to connect the application to the online data store, an account
-needs to be created and setup first.
+This solution was designed to send sensor data using the MQTT\* protocol to Amazon\* AWS. In order to connect the application to the online data store, first
+setup and create an account.
 
-Follow the guide here in order to do so: https://github.com/intel-iot-devkit/intel-iot-examples-mqtt/blob/master/aws-mqtt.md
+To set up and create an account: https://github.com/intel-iot-devkit/intel-iot-examples-mqtt/blob/master/aws-mqtt.md
 
-**Note:** the Amazon set up guide was initially written with the Intel® Edison board in mind but it can be applied to the Intel® NUC as well.
-
-You should now have the following information:
+The following information should now be available:
  * `MQTT_SERVER` - use the host value you obtained by running the `aws iot describe-endpoint` command, along with the `ssl://` (for C++) or `mqtts://` protocol (for JavaScript\*)
  * `MQTT_CLIENTID` - use `\<Your device name\>`
  * `MQTT_TOPIC` - use devices`/\<Your device name\>`
@@ -352,7 +354,7 @@ You should now have the following information:
  3. Click the Run button to run the code on your board.
 
     ![Figure 11](./images/figure11.png)
-    
+
     *Figure 11. Adding MQTT variables to a Run Configuration*
 
 As this how-to reference implementation demonstrates, IoT developers can build solutions at relatively low cost and without specialized skill sets. Using an Intel®
@@ -360,8 +362,6 @@ NUC combined with an Arduino 101\* board and sensors, project teams can rapidly 
 
 ## More Information
 
- * Development Narrative: Making of the Environment Monitor solution: <URL>
- * Exploring Environment Monitoring Using Intel® Edison: https://software.intel.com/en-us/articles/exploring-air-quality-monitoring-using-intel-edison
- * Code Sample - Air Quality Sensor In Java\*: https://software.intel.com/en-us/articles/air-quality-sensor-in-java
- * Code Sample - Air quality sensor in C++: https://software.intel.com/en-us/articles/how-to-intel-iot-code-samples-air-quality-sensor-in-cpp
- * Intel® Developer Zone for IoT: https://software.intel.com/en-us/iot/home
+ * [IoT Reference Implementation: Making of an Evironment Monitor Solution](https://software.intel.com/en-us/articles/iot-reference-implementation-making-of-an-environment-monitor-solution)
+ * [Code Sample - Air Quality Sensor In Java\*](https://software.intel.com/en-us/articles/air-quality-sensor-in-java)
+ * [Code Sample - Air quality sensor in C++](https://software.intel.com/en-us/articles/how-to-intel-iot-code-samples-air-quality-sensor-in-cpp)
