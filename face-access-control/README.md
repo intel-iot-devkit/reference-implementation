@@ -21,7 +21,7 @@ The Face Access Control system consists of two main subsystems:
    USB camera (for detecting faces) and then performs facial recognition based on a training data file of authorized users to
    determine if a detected person is a known user or previously unknown. Messages are published to a MQTT\* broker when users
    are recognized and the processed output frames are written to stdout in raw format (to be piped to ffmpeg for compression
-   and streaming). Here, Intel's Photography Vision Library is used for facial detection and recognition.
+   and streaming). Here, the Photography Vision Library is used for facial detection and recognition.
 
 ### webservice
  * [webservice](./webservice) uses the MQTT broker to interact with cvservice. It's an application based on Node.js\* for
