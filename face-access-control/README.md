@@ -89,6 +89,14 @@ After completing the registration, download the archive for Ubuntu\*, unpack it,
 When prompted, install as the root user or as a user with root permissions. The rest of the guide assumes you will install the
 Intel® CV SDK under the default location.
 
+After installation, don't forget to source the CV SDK environment variables:
+
+    source /opt/intel/computer_vision_sdk_<version>/bin/setupvars.sh
+
+This will be required for building and running cvservice.
+To automate this process, you can source the script from `.profile` or `.bashrc`. Alternatively, you can add the variables to
+`/etc/environment`.
+
 ### ffmpeg
 
 This reference implementation uses ffmpeg to compress and stream video output from cvservice to the webservice clients. ffmpeg
