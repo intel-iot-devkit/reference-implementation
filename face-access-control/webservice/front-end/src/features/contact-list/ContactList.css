@@ -1,0 +1,15 @@
+@import '../../constants/constants.css';
+
+.contact-list-container {
+  flex: 1 0 auto;
+  min-width: 545px;
+  padding: 20px 30px 50px 10px;  
+}
+
+.contact-item {
+}
+
+.contacts-empty {
+  font-size: 1.6rem;
+  padding: 0 0 0 2rem;
+}

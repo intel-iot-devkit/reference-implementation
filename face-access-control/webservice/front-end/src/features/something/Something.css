@@ -1,0 +1,16 @@
+.something {
+  text-transform: uppercase;
+  color: white;
+  width: 666px;
+  height: 333px;
+  background-color: blue;
+  
+  &.active {
+    color: black;
+  }
+
+  & .counter {
+    padding: 20px;
+    cursor: pointer;
+  }
+}

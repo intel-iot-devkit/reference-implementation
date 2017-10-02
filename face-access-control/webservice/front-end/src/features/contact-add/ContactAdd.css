@@ -1,0 +1,93 @@
+@import '../../constants/constants.css';
+
+.contact-add-container {
+  background-color: var(--my-light-grey);
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  font-size: 1.6rem;
+  min-width: 500px;
+  max-width: 735px;
+  padding: 20px 60px 0 50px;
+
+  & h2 {margin: 0 0 5px;}
+}
+
+.image-capture {
+  width: 100%;
+}
+
+.form-body {
+  align-content: space-between;
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  box-sizing: border-box;
+  border-top: 2px solid var(--intel-border);
+
+  padding: 20px 0;
+  width: 100%;
+
+  &.hide-form {
+    display: none;
+    height: 0px;
+  }
+
+}
+
+.form-body label, .form-body select, .form-body input {
+  margin-bottom: 10px;
+}
+
+.form-body label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 25%;
+}
+
+.form-body select, .form-body input {
+  font-size: 1.4rem;
+  padding: 5px;
+  height: 3rem;
+  width: 60%;
+}
+
+.form-footer {
+  border-top: 2px solid var(--intel-border);
+  margin: 10px 0;
+  text-align: right;
+}
+
+.form-footer button {
+  display: inline;
+}
+
+button.btn-cancel {
+  background-color: var(--intel-med-grey);
+  color: var(--my-white);
+  padding: 5px 10px;
+  width: 80px;
+  &:hover {
+    background-color: var(--my-dark-gray);
+  }
+}
+
+button.btn-add {
+  background-color: var(--intel-azure);
+  color: var(--my-white);
+  padding: 5px 10px;
+  width: 80px;
+  margin-right: 0;
+}
+
+button.btn-add:disabled {
+  background-color: #023ba7;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+button.btn-add:disabled span{
+  cursor: not-allowed;
+  opacity: 0.8;
+}

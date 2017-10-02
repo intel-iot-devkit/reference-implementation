@@ -1,0 +1,114 @@
+@import '../../constants/constants.css';
+
+.contact-details-container {
+  background-color: var(--my-light-grey);
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  min-width: 500px;
+  max-width: 735px;
+  padding: 20px 60px 50px 50px;
+}
+
+.unknown-contact {
+  border: 1px solid var(--intel-med-grey);
+  border-radius: 10px;
+  color: var(--intel-med-grey);
+  font-size: 1.8rem;
+
+  margin: 25% auto;
+
+  text-align: center;
+  vertical-align: middle;
+
+  height: 300px;
+  width: 300px;
+}
+
+.unknown-contact span { margin-top: 100px; }
+
+.contact-name {
+  font-size: 20px;
+  min-width: 300px;
+  margin: 0 auto 10px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.contact-image {
+  height: 300px;
+  margin: 10px auto;
+  width: 300px;
+}
+
+.contact-clearance {
+  background-color: var(--my-white);
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 18px;
+  height: 40px;
+  margin: 10px auto;
+  padding: 10px 0;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 400px;
+}
+
+.clearance-dot {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  display: block;
+  position: absolute;
+  height: 40px;
+  margin-top: -10px;
+  width: 40px;
+}
+
+.clearance-type-a {
+  background-color: var(--intel-type-a);
+}
+
+.clearance-type-b {
+  background-color: var(--intel-type-b);
+}
+
+.clearance-type-c {
+  background-color: var(--intel-type-c);
+}
+
+.clearance-type-d {
+  background-color: var(--intel-type-d);
+}
+
+
+.contact-image img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.contact-stats {
+  box-sizing: border-box;
+  clear: left;
+  align-content: space-between;
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+
+  font-size: 1.6rem;
+
+  max-width: 400px;
+}
+
+.stat-label, .stat-value {
+  box-sizing: border-box;
+  padding: 10 40px 10px 0;
+}
+
+.stat-label {
+  font-weight: 600;
+  width: 25%
+}
+
+.stat-value {
+  width: 70%;
+}

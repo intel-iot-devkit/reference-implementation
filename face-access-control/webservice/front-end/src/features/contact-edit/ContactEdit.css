@@ -1,0 +1,10 @@
+@import '../../constants/constants.css';
+
+.contact-edit-container {
+  background-color: var(--my-light-grey);
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  min-width: 500px;
+  max-width: 735px;
+  padding: 20px 60px 0 50px;
+}

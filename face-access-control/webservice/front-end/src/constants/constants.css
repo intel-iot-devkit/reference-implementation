@@ -1,0 +1,21 @@
+:root {
+  --my-black: #222;
+  --my-red: red;
+  --my-white: #fff;
+  --my-light-grey: #f3f3f3;
+  --my-dark-gray: #252525;
+
+  --intel-azure: #00aeef;
+  --intel-border: #979797;
+  --intel-charcoal: #212121;
+  --intel-med-grey: #c9c9c9;
+  --intel-orange: #ee6e41;
+  --intel-orange-yellow: #ffa300;
+  --intel-blood-orange: #fc4c02;
+  --intel-yellow-green: #c4d600;
+  --intel-type-a: #ff8008;
+  --intel-type-b: #19547b;
+  --intel-type-c: #f05053;
+  --intel-type-d: #4ac29a;
+  --intel-type-unknown: #424242;
+}

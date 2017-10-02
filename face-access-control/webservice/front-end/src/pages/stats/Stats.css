@@ -1,0 +1,35 @@
+@import '../../constants/constants.css';
+
+.stats {
+  color: black;
+  font-size: 1.4rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.chart-row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: none;
+  justify-content: space-between;
+
+  margin: 30px 0 30px;
+}
+
+.chart {
+}
+
+.chart-empty {
+  text-align: center;
+}
+
+.chart-donut {
+  width: 40%;
+  & canvas {
+    margin-top: 4rem;
+  }
+}
+
+.chart-scatter {
+  width: 60%;
+}

@@ -1,0 +1,11 @@
+@import '../../constants/constants.css';
+
+.page-directory {
+  background: var(--my-white);
+  color: var(--my-black);
+
+  align-content: space-between;
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+}

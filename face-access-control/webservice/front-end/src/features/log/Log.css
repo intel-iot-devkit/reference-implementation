@@ -1,0 +1,53 @@
+@import '../../constants/constants.css';
+
+.log {
+  position: absolute;
+  z-index: 100;
+  background-color: #f2f2f2;
+  height: calc( 100% - 55px);
+  width: 300px;
+  right: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: transform .3s ease-in-out;
+  transform: translateX(400px);
+  &.active {
+    transform: translateX(0);
+  }
+  & .log-item {
+    width: 275px;
+    height: 80px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+    margin: 5px 0 4px 5px;
+    display: flex;
+    position: relative;
+    & .time-name {
+      padding: 20px 0 20px 5px;
+    }
+    & .time {
+      font-size: 1.4rem;
+      font-weight: 300;
+      text-align: left;
+      color: #555555;
+    }
+    & .name {
+      font-size: 1.4rem;
+      text-align: left;
+      color: #555555;
+    }
+    & .check {
+      color: #c4d600;
+      position: absolute;
+      right: 20px;
+      top: 25px;
+    }
+  }
+  & .profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    margin: 9px 15px;
+  }
+}
