@@ -38,7 +38,7 @@ include(pahomqtt)
 set(DETECTOR cvservice)
 set(DSOURCES src/cvservice.cpp src/mqtt.cpp)
 add_executable(${DETECTOR} ${DSOURCES})
-add_dependencies(${DETECTOR} paho)
+add_dependencies(${DETECTOR} pahomqtt)
 set_target_properties(${DETECTOR} ${TRAINER} PROPERTIES COMPILE_FLAGS "-pthread -std=c++11")
 target_link_libraries (${DETECTOR} ${OpenCV_LIBS} paho-mqtt3cs)
 
