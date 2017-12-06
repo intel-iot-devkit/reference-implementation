@@ -51,6 +51,9 @@
 // MQTT
 #include "mqtt.h"
 
+// MRAA
+#include "mraa.hpp"
+
 using namespace std;
 using namespace cv;
 using namespace cv::pvl;
@@ -58,6 +61,7 @@ using namespace cv::pvl;
 volatile bool running = true;
 volatile bool performRegistration = false;
 
+const char* STATIC_IMAGE = "./static.png";
 const char* DEFAULT_DB_LOCATION = "./defaultdb.xml";
 const char* DEFAULT_THUMBNAIL_PATH = "./thumbs/";
 const int FONT = cv::FONT_HERSHEY_PLAIN;
@@ -67,6 +71,7 @@ const Scalar WHITE(255, 255, 255);
 
 Ptr<FaceDetector> pvlFD;
 Ptr<FaceRecognizer> pvlFR;
+Mat imgStatic;
 Mat imgIn;
 Mat imgGray;
 VideoCapture webcam;
@@ -82,6 +87,11 @@ string thumbnailPath;
 
 string lastTopic;
 string lastID;
+
+mraa::Led ledRed("red");
+mraa::Led ledGreen("green");
+
+mraa::Gpio pirSensor(7);
 
 // parse the command line arguments passed in, to determine which camera ID to use
 // also handle any ENV vars
@@ -261,6 +271,8 @@ void recognizeFaces() {
                 }
             } else {
                 publishMQTTMessage("person/seen", to_string(personIDs[i]));
+                ledRed.setBrightness(0);
+                ledGreen.setBrightness(1);
             }
         }
 
@@ -270,6 +282,8 @@ void recognizeFaces() {
     } else {
         lastTopic.clear();
         lastID.clear();
+        ledRed.setBrightness(1);
+        ledGreen.setBrightness(0);
     }
 }
 
@@ -306,12 +320,33 @@ void displayRecognitionInfo()
 }
 
 // Output BGR24 raw format to console.
-void outputFrame() {
+/* void outputFrame() {
     MatIterator_<Vec3b> i;
     i = imgIn.begin<Vec3b>();
     while (i++ != imgIn.end<Vec3b>()) {
         cout << (*i)[0] << (*i)[1] << (*i)[2];
     }
+} */
+
+// Output BGR24 raw format to console.
+void outputFrame(Mat img) {
+    /*
+    MatIterator_<Vec3b> i;
+    i = img.begin<Vec3b>();
+    while (i++ != img.end<Vec3b>()) {
+        cout << (*i)[0] << (*i)[1] << (*i)[2];
+    }
+    */
+    int i,j;
+    unsigned char b, g, r;
+    Vec3b pixel;
+    for(int j = 0;j < img.rows;j++){
+      for(int i = 0;i < img.cols;i++){
+          pixel = img.at<Vec3b>(j, i);
+          printf("%c%c%c", pixel[0], pixel[1], pixel[2]);
+      }
+    }
+    fflush(stdout);
 }
 
 // display the window image
@@ -319,7 +354,7 @@ void display() {
     displayDetectionInfo();
     displayRecognitionInfo();
 
-    outputFrame();
+    outputFrame(imgIn);
 }
 
 int main(int argc, const char* argv[])
@@ -350,15 +385,22 @@ int main(int argc, const char* argv[])
             return 1;
         }
 
+        imgStatic = imread(STATIC_IMAGE);
+        pirSensor.dir(mraa::DIR_IN);
+        
         while(running)
         {
-            if (getNextImage())
-            {
-                lookForFaces();
+            if(pirSensor.read()){
+                if (getNextImage())
+                {
+                    lookForFaces();
 
-                recognizeFaces();
+                    recognizeFaces();
 
-                display();
+                    display();
+                }
+            } else {
+                outputFrame(imgStatic);
             }
         }
 

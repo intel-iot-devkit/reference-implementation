@@ -29,7 +29,16 @@ if(NOT OpenCV_FOUND)
     message(FATAL_ERROR "${Red}Intel OpenCV was not found!\n${Blue}Have you sourced the ${Green}setupvars.sh${Blue} script provided by the Intel CV SDK?${CR}")
 endif( )
 
-include_directories(${OpenCV_INCLUDE_DIRS})
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(MRAA REQUIRED mraa)
+
+if(MRAA_FOUND)
+    message(STATUS "${Blue}Found libmraa!${CR}")
+    message(STATUS "MRAA_INCLUDE_DIRS=${MRAA_INCLUDE_DIRS}")
+    message(STATUS "MRAA_LIBS=${MRAA_LIBRARIES}")
+endif( )
+
+include_directories(${OpenCV_INCLUDE_DIRS} ${MRAA_INCLUDE_DIRS})
 
 # Install paho MQTT dependency
 include(pahomqtt)
@@ -40,7 +49,7 @@ set(DSOURCES src/cvservice.cpp src/mqtt.cpp)
 add_executable(${DETECTOR} ${DSOURCES})
 add_dependencies(${DETECTOR} pahomqtt)
 set_target_properties(${DETECTOR} ${TRAINER} PROPERTIES COMPILE_FLAGS "-pthread -std=c++11")
-target_link_libraries (${DETECTOR} ${OpenCV_LIBS} paho-mqtt3cs)
+target_link_libraries (${DETECTOR} ${OpenCV_LIBS} ${MRAA_LIBRARIES} paho-mqtt3cs)
 
 # Install
 install(TARGETS ${DETECTOR} DESTINATION bin)

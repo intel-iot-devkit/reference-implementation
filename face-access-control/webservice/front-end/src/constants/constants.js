@@ -1,6 +1,6 @@
 export const SETTINGS = {
-  NODE_SERVER: "http://localhost:8000",
-  CAMERA_FEED_SERVER: "http://localhost:8090",
+  NODE_SERVER: "http://192.168.1.11:8000",
+  CAMERA_FEED_SERVER: "http://192.168.1.11:8090",
   CAMERA_FEED_WIDTH: 640,
 };
 
@@ -18,7 +18,7 @@ export const HTTP = {
   CAMERA_FEED: `${SETTINGS.CAMERA_FEED_SERVER}/facstream.mjpeg`, // POST
 };
 export const MQTT = {
-  MQTT_SERVER: "ws://localhost:3000",
+  MQTT_SERVER: "ws://192.168.1.11:3000",
   TOPICS: {
     IMAGE: "image",
     SEEN: "person/seen",
