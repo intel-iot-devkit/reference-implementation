@@ -1,0 +1,11 @@
+[Unit]
+Description=Node WebPack for Face Access Control front-end
+
+[Service]
+Type=simple
+WorkingDirectory=/home/upsquared/reference-implementation/face-access-control/webservice/front-end
+ExecStart=/usr/bin/npm run dev
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=Computer Vision service for Face Access Control
+Requires=webserver.service webpack.service ffserver.service
+After=ffserver.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/upsquared/reference-implementation/face-access-control/cvservice/build
+Environment=MQTT_SERVER=localhost:1883
+Environment=MQTT_CLIENT_ID=cvservice
+Environment=FACE_DB=./defaultdb.xml
+Environment=FACE_IMAGES=../../webservice/server/node-server/public/profile/
+Environment=LD_LIBRARY_PATH=/opt/intel/computer_vision_sdk_2017.0.139/opencv/share/OpenCV/3rdparty/lib:/opt/intel/computer_vision_sdk_2017.0.139/opencv/lib
+ExecStart=/bin/sh -c './cvservice 0 2>/dev/null | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size vga -r 15 -i - http://192.168.5.1:8090/fac.ffm'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

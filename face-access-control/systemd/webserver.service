@@ -1,0 +1,11 @@
+[Unit]
+Description=Node.js WebServer with MQTT for Face Access Control back-end
+
+[Service]
+Type=simple
+WorkingDirectory=/home/upsquared/reference-implementation/face-access-control/webservice/server/node-server
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

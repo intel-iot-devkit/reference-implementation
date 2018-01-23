@@ -1,0 +1,11 @@
+[Unit]
+Description=FFServer instance for streaming to Face Access Control UI
+
+[Service]
+Type=simple
+WorkingDirectory=/home/upsquared/reference-implementation/face-access-control
+ExecStart=/usr/bin/ffserver -f ffmpeg/server.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
