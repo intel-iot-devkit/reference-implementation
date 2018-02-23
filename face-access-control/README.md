@@ -17,7 +17,7 @@ From this reference implementation, developers will learn to build and run an ap
 The Face Access Control system consists of two main subsystems:
 
 ### cvservice
- * [cvservice](./cvservice) is a C++ application that uses the Intel® Computer Vision SDK (Intel® CV SDK). It connects to a
+ * [cvservice](./cvservice) is a C++ application that uses the Intel® Computer Vision SDK Beta R3. It connects to a
    USB camera (for detecting faces) and then performs facial recognition based on a training data file of authorized users to
    determine if a detected person is a known user or previously unknown. Messages are published to a MQTT\* broker when users
    are recognized and the processed output frames are written to stdout in raw format (to be piped to ffmpeg for compression
@@ -55,7 +55,7 @@ This is an example of the analytics tab:
 ## Software requirements
 
  * Ubuntu\* 16.04
- * [Intel® CV SDK Beta](https://software.intel.com/en-us/computer-vision-sdk)
+ * [Intel® Computer Vision SDK Beta R3](https://software.intel.com/en-us/computer-vision-sdk)
 
 ## How to set up
 
@@ -63,7 +63,7 @@ This is an example of the analytics tab:
 
 #### Download and install OpenCL\*
 
-The Intel® CV SDK requires OpenCL\*, which is available as a separate download. We provide a script that helps with
+The Intel® Computer Vision SDK Beta R3 requires OpenCL\*, which is available as a separate download. We provide a script that helps with
 the installation process [here](https://software.intel.com/file/593325/download). Unpack the archive using:
 
     tar xf install_OCL_driver2_sh.tgz
@@ -87,7 +87,7 @@ After completing the registration, download the archive for Ubuntu\*, unpack it,
     ./install_GUI.sh
 
 When prompted, install as the root user or as a user with root permissions. The rest of the guide assumes you will install the
-Intel® CV SDK under the default location.
+Intel® Computer Vision SDK Beta R3 under the default location.
 
 After installation, don't forget to source the CV SDK environment variables:
 
