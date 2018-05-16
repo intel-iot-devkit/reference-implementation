@@ -1,0 +1,7 @@
+../resources/ssd300.xml
+../resources/ssd300.bin
+../resources/labels.txt
+video: ../resources/person-bicycle-car-detection.mp4
+intruder: person
+intruder: bicycle
+intruder: car

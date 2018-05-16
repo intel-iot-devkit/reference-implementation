@@ -1,0 +1,101 @@
+body{
+    background-color: #ECF0F5;
+}
+video {
+    position: relative;
+}
+
+div.counter div.footer {
+    position: relative;
+    bottom: 0;
+    font-size: 13px;
+    height: 17px;
+    line-height: 17px;
+    color: #6b6a6a;
+    margin: 3px;
+}
+.counter .footer .first {
+    position: absolute;
+    left:50%;
+}
+.counter .footer .last {
+    position: absolute;
+    right:0;
+}
+
+section.video img {
+    width: 100%;
+}
+
+a.playpause {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    opacity: 0.5;
+    margin: 0;
+    left: 10%;
+    transform: translateX(-5%);
+}
+
+.timeline .line .events .event .circle.Video_1 {
+    background: #f39c12 !important;
+    border: 4px solid #f39c12 !important;
+}
+.timeline .line .events .event .circle.Video_2 {
+    background: #00a65a !important;
+    border: 4px solid #00a65a !important;
+}
+.timeline .line .events .event .circle.Video_3 {
+    background: #367fa9 !important;
+    border: 4px solid #367fa9 !important;
+}
+
+
+span.info-box-icon.Video_1{
+    background-color: #f39c12 !important;
+}
+
+span.info-box-icon.Video_2{
+    background-color: #00a65a !important;
+}
+
+span.info-box-icon.Video_3{
+    background-color: #367fa9 !important;
+}
+
+
+.timeline .line .events .event .label.Video_1 {
+    border: 3px solid #f39c12;
+    background: #fff;
+}
+.timeline .line .events .event .label.Video_2 {
+    border: 3px solid #00a65a;
+    background: #fff;
+}
+.timeline .line .events .event .label.Video_3 {
+    border: 3px solid #367fa9;
+    background: #fff;
+}
+
+.info-box-content {
+    padding: 5px 10px;
+    /* margin-left: 90px; */
+    text-align: center;
+}
+
+.info-box-content {
+    padding: 5px 10px;
+}
+
+.progress-description, .info-box-text {
+    font-size: 20px;
+}
+
+.info-box-number {
+    font-size: 28px;
+}
+
+.info-box-content {
+    padding: 5px 10px;
+    margin-left: 0;
+}

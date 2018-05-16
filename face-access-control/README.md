@@ -17,11 +17,11 @@ From this reference implementation, developers will learn to build and run an ap
 The Face Access Control system consists of two main subsystems:
 
 ### cvservice
- * [cvservice](./cvservice) is a C++ application that uses the Intel® Computer Vision SDK Beta R3. It connects to a
+ * [cvservice](./cvservice) is a C++ application that uses OpenVINO™. It connects to a
    USB camera (for detecting faces) and then performs facial recognition based on a training data file of authorized users to
    determine if a detected person is a known user or previously unknown. Messages are published to a MQTT\* broker when users
    are recognized and the processed output frames are written to stdout in raw format (to be piped to ffmpeg for compression
-   and streaming). Here, the Photography Vision Library is used for facial detection and recognition.
+   and streaming). Here, Intel's Photography Vision Library is used for facial detection and recognition.
 
 ### webservice
  * [webservice](./webservice) uses the MQTT broker to interact with cvservice. It's an application based on Node.js\* for
@@ -55,43 +55,26 @@ This is an example of the analytics tab:
 ## Software requirements
 
  * Ubuntu\* 16.04
- * [Intel® Computer Vision SDK Beta R3](https://software.intel.com/en-us/computer-vision-sdk)
+ * [OpenVINO™](https://software.intel.com/en-us/computer-vision-sdk)
 
 ## How to set up
 
-### Intel® CV SDK
+### OpenVINO™ 
 
-#### Download and install OpenCL\*
+#### Download and Install OpenVINO™
 
-The Intel® Computer Vision SDK Beta R3 requires OpenCL\*, which is available as a separate download. We provide a script that helps with
-the installation process [here](https://software.intel.com/file/593325/download). Unpack the archive using:
-
-    tar xf install_OCL_driver2_sh.tgz
-
-Then prepare a temporary workspace and run the script:
-
-    mkdir opencl-temp
-    ./install_OCL_driver2.sh install --workspace opencl-temp
-
-For this application you do not need to recompile the Linux\* kernel thus answer **no** when asked during the installation process.
-Additional details and instructions are provided in [this article](https://software.intel.com/articles/sdk-for-opencl-gsg).
-The System Analyzer Utility mentioned in the article can be use to confirm proper installation.
-
-#### Download and Install the Intel® CV SDK
-
-The guide for installing the Intel® CV SDK is offered [here](https://software.intel.com/en-us/cvsdk-quickstartguide-installing-intel-computer-vision-sdk).
+The guide for installing OpenVINO™ is offered [here](https://software.intel.com/en-us/articles/CVSDK-Install-Linux).
 After completing the registration, download the archive for Ubuntu\*, unpack it, and run the GUI installer:
 
-    tar xaf intel_cv_sdk_ubuntu_<version>.tgz
-    cd intel_cv_sdk_ubuntu_<version>
+    tar xaf l_intel_cv_sdk_p_<version>.tgz
+    cd l_intel_cv_sdk_p_<version>
     ./install_GUI.sh
 
-When prompted, install as the root user or as a user with root permissions. The rest of the guide assumes you will install the
-Intel® Computer Vision SDK Beta R3 under the default location.
+When prompted, install as the root user or as a user with root permissions. The rest of the guide assumes you will install OpenVINO™ to the default location.
 
-After installation, don't forget to source the CV SDK environment variables:
+After installation, don't forget to source the OpenVINO™ environment variables:
 
-    source /opt/intel/computer_vision_sdk_<version>/bin/setupvars.sh
+    source /opt/intel/computer_vision_sdk/bin/setupvars.sh
 
 This will be required for building and running cvservice.
 To automate this process, you can source the script from `.profile` or `.bashrc`. Alternatively, you can add the variables to

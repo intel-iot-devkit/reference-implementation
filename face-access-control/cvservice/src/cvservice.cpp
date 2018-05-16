@@ -307,11 +307,16 @@ void displayRecognitionInfo()
 
 // Output BGR24 raw format to console.
 void outputFrame() {
-    MatIterator_<Vec3b> i;
-    i = imgIn.begin<Vec3b>();
-    while (i++ != imgIn.end<Vec3b>()) {
-        cout << (*i)[0] << (*i)[1] << (*i)[2];
+    int i,j;
+    unsigned char b, g, r;
+    Vec3b pixel;
+    for(int j = 0;j < imgIn.rows;j++){
+      for(int i = 0;i < imgIn.cols;i++){
+          pixel = imgIn.at<Vec3b>(j, i);
+          printf("%c%c%c", pixel[0], pixel[1], pixel[2]);
+      }
     }
+    fflush(stdout);
 }
 
 // display the window image
