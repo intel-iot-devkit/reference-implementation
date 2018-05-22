@@ -122,7 +122,7 @@ cd build/
 And then run the program:
 
 ```
-./object_counter
+./store-traffic-monitor
 ```
 
 ## Running on the integrated GPU (optional)
