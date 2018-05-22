@@ -15,7 +15,7 @@ The counter uses the Inference Engine included in OpenVINO™. A trained neural 
 
 ### Software
 * [Ubuntu\* 16.04 LTS](http://releases.ubuntu.com/16.04/)
-*Note*: You must be running kernel version 4.7+ to use this software. Run the following command to determine your kernel version:
+*Note*: We recommend using a 4.14+ Linux kernel with this software. Run the following command to determine your kernel version:
 
 ```
 uname -a
