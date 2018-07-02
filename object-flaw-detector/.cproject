@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="intel.config.iss.exe.debug.1349921209">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="intel.config.iss.exe.debug.1349921209" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ICCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="intel.config.iss.exe.debug.1349921209" name="Debug" parent="intel.config.iss.exe.debug">
+					<folderInfo id="intel.config.iss.exe.debug.1349921209." name="/" resourcePath="">
+						<toolChain id="intel.toolchain.iss.exe.debug.273019588" name="Intel System Studio" superClass="intel.toolchain.iss.exe.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="intel.platform.iss.base.1420444829" isAbstract="false" name="intel.platform.base" osList="linux" superClass="intel.platform.iss.base"/>
+							<builder buildPath="${workspace_loc:/Final_shashi}/Debug" id="intel.builder.base.485108911" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="intel.builder.base"/>
+							<tool id="intel.tool.archiver.iss.base.1852190103" name="Intel Archiver" superClass="intel.tool.archiver.iss.base"/>
+							<tool id="intel.tool.cpp.compiler.iss.base.1190898291" name="Intel C++ Compiler" superClass="intel.tool.cpp.compiler.iss.base">
+								<option defaultValue="true" id="intel.compilestep.general.debug.1076700114" name="Include Debug Information (-g)" superClass="intel.compilestep.general.debug" useByScannerDiscovery="false" valueType="boolean"/>
+								<option defaultValue="general.opt.none" id="intel.compilestep.general.optimization2.67959547" name="Optimization Level" superClass="intel.compilestep.general.optimization2" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="intel.compilestep.preprocessor.includedirectories.2042628993" name="Additional Include Directories (-I)" superClass="intel.compilestep.preprocessor.includedirectories" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/opt/intel/computer_vision_sdk_2018.1.249/opencv/include"/>
+									<listOptionValue builtIn="false" value="/opt/intel/computer_vision_sdk_2018.1.249/opencv/include/opencv2"/>
+								</option>
+								<option id="intel.compilestep.language.ansi_conformance.383319752" name="ANSI Conformance" superClass="intel.compilestep.language.ansi_conformance" useByScannerDiscovery="false" value="ansi_conformance.8" valueType="enumerated"/>
+								<inputType id="intel.cpp.compilestep.input.1805813103" name="C Sources" superClass="intel.cpp.compilestep.input"/>
+								<inputType id="intel.cpp.compilestep.asm.primary.42089628" superClass="intel.cpp.compilestep.asm.primary"/>
+								<inputType id="intel.cpp.compilestep.asm.1760508565" superClass="intel.cpp.compilestep.asm"/>
+							</tool>
+							<tool id="intel.tool.c.compiler.iss.base.304202070" name="Intel C Compiler" superClass="intel.tool.c.compiler.iss.base">
+								<option defaultValue="true" id="intel.compilestep.general.debug.859118959" name="Include Debug Information (-g)" superClass="intel.compilestep.general.debug" useByScannerDiscovery="false" valueType="boolean"/>
+								<option defaultValue="general.opt.none" id="intel.compilestep.general.optimization2.1650104393" name="Optimization Level" superClass="intel.compilestep.general.optimization2" useByScannerDiscovery="false" valueType="enumerated"/>
+								<inputType id="intel.c.compilestep.input.927380141" name="C Sources" superClass="intel.c.compilestep.input"/>
+								<inputType id="intel.c.compilestep.asm.primary.1861063980" superClass="intel.c.compilestep.asm.primary"/>
+								<inputType id="intel.c.compilestep.asm.884800242" superClass="intel.c.compilestep.asm"/>
+							</tool>
+							<tool id="intel.tool.cpp.linker.iss.base.1217275930" name="Intel C++ Linker" superClass="intel.tool.cpp.linker.iss.base">
+								<option id="intel.linkstep.perflibs.daal.1179679295" name="Use Intel(R) Data Analytics Acceleration Library" superClass="intel.linkstep.perflibs.daal" useByScannerDiscovery="false" value="perflibs.mkl.none" valueType="enumerated"/>
+								<option id="intel.linkstep.general.optimization2.459708652" name="Optimization Level" superClass="intel.linkstep.general.optimization2" useByScannerDiscovery="false" value="general.opt.none" valueType="enumerated"/>
+								<option id="intel.linkstep.libpath.130808570" name="Search Directory for Libraries (-L)" superClass="intel.linkstep.libpath" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="/opt/intel/computer_vision_sdk_2018.1.249/opencv/lib"/>
+								</option>
+								<option id="intel.linkstep.libname.629419555" name="Additional Libraries (-l)" superClass="intel.linkstep.libname" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="opencv_highgui"/>
+									<listOptionValue builtIn="false" value="opencv_imgcodecs"/>
+									<listOptionValue builtIn="false" value="opencv_core"/>
+									<listOptionValue builtIn="false" value="opencv_video"/>
+									<listOptionValue builtIn="false" value="opencv_videoio"/>
+									<listOptionValue builtIn="false" value="opencv_imgproc"/>
+									<listOptionValue builtIn="false" value="opencv_ml"/>
+								</option>
+								<inputType id="intel.linkstep.input.1337465148" superClass="intel.linkstep.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="intel.tool.c.linker.iss.base.621784831" name="Intel C Linker" superClass="intel.tool.c.linker.iss.base"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="intel.config.iss.exe.release.698019689">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="intel.config.iss.exe.release.698019689" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ICCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" description="" id="intel.config.iss.exe.release.698019689" name="Release" parent="intel.config.iss.exe.release">
+					<folderInfo id="intel.config.iss.exe.release.698019689." name="/" resourcePath="">
+						<toolChain id="intel.toolchain.iss.exe.release.684378650" name="Intel System Studio" superClass="intel.toolchain.iss.exe.release">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="intel.platform.iss.base.714088266" isAbstract="false" name="intel.platform.base" osList="linux" superClass="intel.platform.iss.base"/>
+							<builder buildPath="${workspace_loc:/Final_shashi}/Release" id="intel.builder.base.1141790617" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="intel.builder.base"/>
+							<tool id="intel.tool.archiver.iss.base.2115586958" name="Intel Archiver" superClass="intel.tool.archiver.iss.base"/>
+							<tool id="intel.tool.cpp.compiler.iss.base.2050091375" name="Intel C++ Compiler" superClass="intel.tool.cpp.compiler.iss.base">
+								<option defaultValue="false" id="intel.compilestep.general.debug.335692948" name="Include Debug Information (-g)" superClass="intel.compilestep.general.debug" valueType="boolean"/>
+								<option defaultValue="general.opt.speed" id="intel.compilestep.general.optimization2.1820864107" name="Optimization Level" superClass="intel.compilestep.general.optimization2" valueType="enumerated"/>
+								<inputType id="intel.cpp.compilestep.input.490169460" name="C Sources" superClass="intel.cpp.compilestep.input"/>
+								<inputType id="intel.cpp.compilestep.asm.primary.872342313" superClass="intel.cpp.compilestep.asm.primary"/>
+								<inputType id="intel.cpp.compilestep.asm.487687987" superClass="intel.cpp.compilestep.asm"/>
+							</tool>
+							<tool id="intel.tool.c.compiler.iss.base.943963557" name="Intel C Compiler" superClass="intel.tool.c.compiler.iss.base">
+								<option defaultValue="false" id="intel.compilestep.general.debug.1566363870" name="Include Debug Information (-g)" superClass="intel.compilestep.general.debug" valueType="boolean"/>
+								<option defaultValue="general.opt.speed" id="intel.compilestep.general.optimization2.1725326123" name="Optimization Level" superClass="intel.compilestep.general.optimization2" valueType="enumerated"/>
+								<inputType id="intel.c.compilestep.input.1969831442" name="C Sources" superClass="intel.c.compilestep.input"/>
+								<inputType id="intel.c.compilestep.asm.primary.2027885414" superClass="intel.c.compilestep.asm.primary"/>
+								<inputType id="intel.c.compilestep.asm.354651762" superClass="intel.c.compilestep.asm"/>
+							</tool>
+							<tool id="intel.tool.cpp.linker.iss.base.958724630" name="Intel C++ Linker" superClass="intel.tool.cpp.linker.iss.base">
+								<inputType id="intel.linkstep.input.723645517" superClass="intel.linkstep.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="intel.tool.c.linker.iss.base.1119581985" name="Intel C Linker" superClass="intel.tool.c.linker.iss.base"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Final_shashi.null.1564325261" name="Final_shashi"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="intel.config.iss.exe.debug.1349921209;intel.config.iss.exe.debug.1349921209.;intel.tool.cpp.compiler.iss.base.1190898291;intel.cpp.compilestep.input.1805813103">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.intel.compiler.cdt.managedbuilder.core.ICCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="intel.config.iss.exe.debug.1349921209;intel.config.iss.exe.debug.1349921209.;intel.tool.c.compiler.iss.base.304202070;intel.c.compilestep.input.927380141">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.intel.compiler.cdt.managedbuilder.core.ICCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/Final_shashi"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/Final_shashi"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+</cproject>

@@ -1,0 +1,49 @@
+{
+    "influx_host":"ubuntu@your-ec2-instance-ip.amazonaws.com",
+    "_comment": "localhost",
+    "influx_port":"8086",
+    "influx_database":"plc_data",
+    "influx_username":"admin",
+    "influx_password":"admin",
+    "influx_measurement":"plc_table",
+    "h2db_username":"SA",
+    "h2db_password":"",
+    "h2db_jar_location":"./h2.jar",
+    "modbus_alerts": {
+        "smcAC": {
+            "rules": {
+                "high": "data['smcAC_amp'] > thresholds['smcAC_amp']['high']",
+                "low": "data['smcAC_amp'] < thresholds['smcAC_amp']['low']"
+            }
+        },
+        "smcDC": {
+            "rules": {
+                "high": "data['smcDC_amp'] > thresholds['smcDC_amp']['high']",
+                "low": "data['smcDC_amp'] < thresholds['smcDC_amp']['low']"
+            }
+        },
+        "vib_table": {
+            "rules": {
+                "high": "data['vib_table_hz'] > thresholds['vib_table_hz']['high']",
+                "low": "data['vib_table_hz'] < thresholds['vib_table_hz']['low']"
+            }
+        }
+
+    },
+
+    "modbus_thresholds": {
+        "smcAC_amp": {
+            "low": -2.0,
+            "high": 2.0
+        },
+        "smcDC_amp": {
+            "low": 1.3,
+            "high": 7.1
+        },
+        "vib_table_hz": {
+            "low": 0.08,
+            "high": 2.1
+        }
+    }
+
+}
