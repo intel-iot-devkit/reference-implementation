@@ -12,7 +12,7 @@ This reference implementation takes a video input (webcam/loaded video), generat
 ### Software
 * Ubuntu 16.04
 * Intel(R) System Studio
-* OpenVINO(TM) toolkit
+* Intel® Distribution of OpenVINO™ toolkit
 * Node.js environment with “yargs, path, azure-storage” installed
 
 ## Setup
