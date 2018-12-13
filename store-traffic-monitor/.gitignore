@@ -1,6 +1,0 @@
-application/build
-application/resources/*xml
-application/resources/*bin
-UI/resources/video_data/*json
-UI/resources/video_frames/Video*
-UI/resources/videos/*mp4

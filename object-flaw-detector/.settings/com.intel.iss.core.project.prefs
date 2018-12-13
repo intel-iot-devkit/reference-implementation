@@ -1,8 +1,0 @@
-com.intel.iss.core.platform.selected.id=com.intel.iss.icc.ide.generic_platform
-com.intel.iss.core.project.name=Final_shashi
-com.intel.iss.core.project.type.id=com.intel.iss.icc.ide.icc_nature
-com.intel.iss.core.project.version=1.1.0
-eclipse.preferences.version=1
-platform/com.intel.iss.icc.ide.show_only_compatible=true
-platform/com.intel.iss.icc.ide.toolchain=intel.toolchain.iss.base
-platform/os=com.intel.iss.icc.os
