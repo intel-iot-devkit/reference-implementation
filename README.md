@@ -6,21 +6,27 @@
 
 [Machine Operator Monitor - C++](https://github.com/intel-iot-devkit/machine-operator-monitor-cpp)
 
+[Machine Operator Monitor - Go](https://github.com/intel-iot-devkit/machine-operator-monitor-go)
+
 [Motor Defect Detector - Python](https://github.com/intel-iot-devkit/motor-defect-detector)
 
 [Object Flaw Detector - C++](https://github.com/intel-iot-devkit/object-flaw-detector)
 
 [Object Size Detector - C++](https://github.com/intel-iot-devkit/object-size-detector-cpp)
 
+[Object Size Detector - Go](https://github.com/intel-iot-devkit/object-size-detector-go)
+
 [Parking Lot Counter - C++](https://github.com/intel-iot-devkit/parking-lot-counter-cpp)
+
+[Parking Lot Counter - Go](https://github.com/intel-iot-devkit/parking-lot-counter-go)
 
 [People Counter - C++](https://github.com/intel-iot-devkit/people-counter)
 
-[Restricted Zone Notifier - C++](https://github.com/intel-iot-devkit/restricted-zone-notifier-cpp)
+[Restricted Zone Notifier - Go](https://github.com/intel-iot-devkit/restricted-zone-notifier-go)
 
 [Shopper Gaze Monitor - C++](https://github.com/intel-iot-devkit/shopper-gaze-monitor-cpp)
 
-[Shopper Mood Monitor - C++](https://github.com/intel-iot-devkit/shopper-mood-monitor-cpp)
+[Shopper Mood Monitor - Go](https://github.com/intel-iot-devkit/shopper-mood-monitor-go)
 
 [Store Aisle Monitor - C++](https://github.com/intel-iot-devkit/store-aisle-monitor)
 
